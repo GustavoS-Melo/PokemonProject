@@ -30,3 +30,23 @@ form.addEventListener('submit', (e) => {
 
   buscarPokemon(query);
 });
+
+// Exibe o resultado na tela
+function exibirResultado(pokemon) {
+  grid.innerHTML = "";
+
+  const id = pokemon.id;
+  const nome = pokemon.name;
+  const img = pokemon.sprites.other['official-artwork'].front_default;
+  const tipos = pokemon.types.map(t => t.type.name);
+
+  const card = document.createElement('div');
+  card.className += 'card';
+
+  card.innerHTML = `
+    <img src="${img}" alt="${nome}">
+    <p class="card-id">#${id}</p>
+    <p class="card-name">${nome}</p>`;
+
+  grid.appendChild(card);
+}
