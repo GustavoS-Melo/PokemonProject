@@ -13,3 +13,20 @@ async function buscarPokemon(nomeOuId) {
     grid.innerHTML = `<p style="color:red">Pokémon não encontrado.</p>`;
   }
 }
+
+// Captura dos elementos
+const form = document.getElementById('search-form');
+const input = document.getElementById('search-input');
+const grid = document.getElementById('cards-grid');
+const title = document.getElementById('results-title');
+
+
+// Evento do botão (submit do form)
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // impede que a pagina recarregue
+
+  const query = input.value.trim().toLowerCase();
+  if (!query) return;
+
+  buscarPokemon(query);
+});
