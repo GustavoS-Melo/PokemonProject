@@ -121,6 +121,11 @@ form.addEventListener('submit', (e) => {
   buscarPokemon(query);
 });
 
+// ADICIONANDO EVENTO NOS CARDS
+function enableCardClick(cardElement, pokemonId) {
+  cardElement.addEventListener("click", () => loadDetails(pokemonId));
+}
+
 // Exibe o resultado na tela
 function exibirResultado(pokemon) {
   grid.innerHTML = "";
@@ -137,6 +142,9 @@ function exibirResultado(pokemon) {
     <img src="${img}" alt="${nome}">
     <p class="card-id">#${id}</p>
     <p class="card-name">${nome}</p>`;
+    
+  // EXIBE O MODAL
+  enableCardClick(card, id);
 
   grid.appendChild(card);
 }
