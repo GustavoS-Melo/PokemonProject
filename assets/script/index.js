@@ -46,7 +46,64 @@ async function loadDetails(id) {
   // Abre o modal com tudo
   openModal(pokemon, species, evolutionLine);
 }
+// DETALHES DO POKÉMON
 
+// Abre o modal com todas as informações
+function openModal(pokemonData, speciesData, evolutionLine) {
+  const modal = document.getElementById("pokemon-modal");
+
+  modal.innerHTML = `
+        <div class="modal">
+            <button class="close-modal">×</button>
+
+            <div class="modal-header">
+                <h2>#${pokemonData.id} — ${pokemonData.name.toUpperCase()}</h2>
+                <img src="${pokemonData.sprites.other["official-artwork"].front_default}" alt="${pokemonData.name}">
+            </div>
+
+            <div class="modal-section">
+                <h3>Descrição</h3>
+                <p>${speciesData.flavor_text_entries
+      .find(t => t.language.name === "en")
+      .flavor_text.replace(/\f/g, " ")}</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Stats</h3>
+                <ul class="stats-list">
+                    ${pokemonData.stats
+      .map(s => `<li>${s.stat.name}: <strong>${s.base_stat}</strong></li>`)
+      .join("")}
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Habilidades</h3>
+                <ul>
+                    ${pokemonData.abilities
+      .map(a => `<li>${a.ability.name}</li>`)
+      .join("")}
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Evoluções</h3>
+                <p>${evolutionLine}</p>
+            </div>
+        </div>
+    `;
+
+  modal.classList.remove("hidden");
+
+  // Fechar modal
+  modal.querySelector(".close-modal").addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) modal.classList.add("hidden");
+  });
+}
 // Captura dos elementos
 const form = document.getElementById('search-form');
 const input = document.getElementById('search-input');
