@@ -219,7 +219,147 @@ body {
 }
 
 .site-footer a{
-    color: #000000;
-    text-decoration: none;
-    font-size: 15px;
+  color: #000000;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* MODAL — Fundo e estrutura */
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  overflow-y: auto;
+  z-index: 9999;
+  animation: fadeIn .2s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* CONTEÚDO DO MODAL */
+
+.modal {
+  background: #fff;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 20px;
+  padding: 25px 25px 40px;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  animation: scaleIn .25s ease;
+}
+
+
+/* BOTÃO DE FECHAR */
+
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #e63946;
+  border: none;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-modal:hover {
+  background: #b71c1c;
+}
+
+
+/* CABEÇALHO DO MODAL */
+
+.modal-header {
+  text-align: center;
+}
+
+.modal-header h2 {
+  margin-bottom: 15px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+}
+
+.modal-header img {
+  width: 180px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+/* SEÇÕES E TÍTULOS */
+
+.modal-section {
+  margin-top: 25px;
+}
+
+.modal-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.modal-section p, .modal-section li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+/* STATS */
+
+.stats-list {
+  list-style: none;
+  padding: 0;
+}
+
+.stats-list li {
+  background: #f2f2f2;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.modal-section ul li {
+  margin-bottom: 6px;
+}
+
+
+/* ANIMAÇÕES DO MODAL */
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes scaleIn {
+    from { 
+      transform: scale(0.85); opacity: 0; 
+    }
+    to { 
+      transform: scale(1); opacity: 1; 
+    }
 }
