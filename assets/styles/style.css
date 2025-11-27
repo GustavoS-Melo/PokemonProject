@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
-:root{
-    --font-base: 'Jost', sans-serif;
-    --font-alt: 'jost', serif;
+:root {
+  --font-base: 'Jost', sans-serif;
+  --font-alt: 'jost', serif;
 }
 
 * {
@@ -24,7 +24,7 @@ body {
   padding: 20px 5%;
   background: #ff5350;
   color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .brand {
@@ -80,7 +80,7 @@ body {
   background: white;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.55);
 }
 
 .hero-left {
@@ -138,7 +138,7 @@ body {
 
 .hero-right img {
   width: 260px;
-  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.55));
 }
 
 .hero-caption {
@@ -168,7 +168,7 @@ body {
   background: #ffffff;
   border-radius: 18px;
   padding: 18px 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
   text-align: center;
   cursor: pointer;
   transition: transform .20s ease, box-shadow .20s ease;
@@ -177,7 +177,7 @@ body {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.22);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55);
 }
 
 .card img {
@@ -234,7 +234,7 @@ body {
   padding-bottom: 30px;
 }
 
-.site-footer a{
+.site-footer a {
   color: #000000;
   text-decoration: none;
   font-size: 15px;
@@ -272,7 +272,7 @@ body {
   border-radius: 20px;
   padding: 25px 25px 40px;
   position: relative;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55);
   animation: scaleIn .25s ease;
 }
 
@@ -333,7 +333,8 @@ body {
   margin-bottom: 8px;
 }
 
-.modal-section p, .modal-section li {
+.modal-section p,
+.modal-section li {
   font-size: 15px;
   line-height: 1.6;
   color: #555;
@@ -362,19 +363,120 @@ body {
 /* ANIMAÇÕES DO MODAL */
 
 @keyframes fadeIn {
-  from { 
-    opacity: 0; 
+  from {
+    opacity: 0;
   }
-  to { 
-    opacity: 1; 
+
+  to {
+    opacity: 1;
   }
 }
 
 @keyframes scaleIn {
-    from { 
-      transform: scale(0.85); opacity: 0; 
-    }
-    to { 
-      transform: scale(1); opacity: 1; 
-    }
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+
+  .topbar {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .brand .logo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .titles h1 {
+    font-size: 28px;
+  }
+
+  .titles .subtitle {
+    font-size: 14px;
+  }
+
+  #search-form {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  #search-form input {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  #search-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  #cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-name {
+    font-size: 16px;
+  }
+
+  .modal {
+    max-width: 90%;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .modal-header img {
+    width: 150px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .modal-section h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .modal-section p,
+  .modal-section li {
+    font-size: 14px;
+  }
+
+  .close-modal {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    top: 8px;
+    right: 8px;
+  }
 }
