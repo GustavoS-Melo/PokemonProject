@@ -61,6 +61,27 @@ body {
   font-weight: 400;
 }
 
+.theme-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 2000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  transition: 0.2s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
 /* CONTAINER */
 
 .container {
@@ -384,8 +405,110 @@ body {
   }
 }
 
+/*MODO ESCURO*/
+.theme-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.theme-btn:hover {
+  opacity: 0.8;
+}
+
+body.dark {
+  background: #1a1a1a;
+  color: #f3f0f0;
+}
+
+body.dark .hero {
+  background-color: #111;
+}
+
+/* Header */
+body.dark .topbar {
+  background: #111;
+}
+
+
+/* Cards */
+body.dark .card {
+  background: #222;
+  border-color: #444 !important;
+  color: #fff;
+}
+
+body.dark .card-id {
+  color: #fdfafa;
+}
+
+/* Modal */
+body.dark .modal {
+  background: #222;
+  color: #fff;
+}
+
+body.dark .stats-list li {
+  background: #333;
+}
+
+body.dark .close-modal {
+  background: #e63946;
+}
+
+/* Input / botão */
+body.dark input {
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark button {
+  background: #333;
+  color: #fff;
+}
+
+body.dark .card-name {
+  color: #ccc;
+}
+
+body.dark .modal-header h2 {
+  color: #ccc;
+}
+
+body.dark .modal-section h3 {
+  color: #ccc;
+}
+
+body.dark .modal-section p {
+  color: #ccc;
+}
+
+body.dark li {
+  color: #ccc;
+}
+
+body.dark footer {
+  color: #ccc;
+}
+
+body.dark footer a {
+  color: #ccc;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 480px) {
+  .theme-btn {
+    top: 14px;
+    right: 14px;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
 
   .topbar {
     padding: 20px;
