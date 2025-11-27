@@ -14,6 +14,39 @@ async function buscarPokemon(nomeOuId) {
   }
 }
 
+// CARREGA OS DETALHES DO POKÉMON
+async function loadDetails(id) {
+  // Dados principais do Pokémon
+  const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then(res => res.json());
+
+  // Dados da espécie
+  const species = await fetch(pokemon.species.url)
+    .then(res => res.json());
+
+  // Dados da cadeia evolutiva
+  const evolution = await fetch(species.evolution_chain.url)
+    .then(res => res.json());
+
+  // Monta a linha evolutiva
+  function getEvolutionNames(chain) {
+    const evo = [];
+    let current = chain;
+
+    while (current) {
+      evo.push(current.species.name);
+      current = current.evolves_to[0];
+    }
+
+    return evo.join(" → ");
+  }
+
+  const evolutionLine = getEvolutionNames(evolution.chain);
+
+  // Abre o modal com tudo
+  openModal(pokemon, species, evolutionLine);
+}
+
 // Captura dos elementos
 const form = document.getElementById('search-form');
 const input = document.getElementById('search-input');
