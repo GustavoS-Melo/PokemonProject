@@ -63,26 +63,20 @@ function openModal(pokemonData, speciesData, evolutionLine) {
 
             <div class="modal-section">
                 <h3>Descrição</h3>
-                <p>${speciesData.flavor_text_entries
-      .find(t => t.language.name === "en")
-      .flavor_text.replace(/\f/g, " ")}</p>
+                <p>${speciesData.flavor_text_entries.find(t => t.language.name === "en").flavor_text.replace(/\f/g, " ")}</p>
             </div>
 
             <div class="modal-section">
                 <h3>Stats</h3>
                 <ul class="stats-list">
-                    ${pokemonData.stats
-      .map(s => `<li>${s.stat.name}: <strong>${s.base_stat}</strong></li>`)
-      .join("")}
+                    ${pokemonData.stats.map(s => `<li>${s.stat.name}: <strong>${s.base_stat}</strong></li>`).join("")}
                 </ul>
             </div>
 
             <div class="modal-section">
                 <h3>Habilidades</h3>
                 <ul>
-                    ${pokemonData.abilities
-      .map(a => `<li>${a.ability.name}</li>`)
-      .join("")}
+                    ${pokemonData.abilities.map(a => `<li>${a.ability.name}</li>`).join("")}
                 </ul>
             </div>
 
@@ -90,8 +84,7 @@ function openModal(pokemonData, speciesData, evolutionLine) {
                 <h3>Evoluções</h3>
                 <p>${evolutionLine}</p>
             </div>
-        </div>
-    `;
+        </div>`;
 
   modal.classList.remove("hidden");
 
@@ -142,7 +135,7 @@ function exibirResultado(pokemon) {
     <img src="${img}" alt="${nome}">
     <p class="card-id">#${id}</p>
     <p class="card-name">${nome}</p>`;
-    
+
   // EXIBE O MODAL
   enableCardClick(card, id);
 
