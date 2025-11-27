@@ -165,33 +165,49 @@ body {
 }
 
 .card {
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   text-align: center;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform .20s ease, box-shadow .20s ease;
+  border: 2px solid transparent;
 }
 
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.22);
 }
 
 .card img {
   width: 120px;
   height: 120px;
+  object-fit: contain;
+  margin: 10px auto;
+  display: block;
 }
 
 .card-name {
   font-size: 18px;
-  margin-top: 10px;
+  font-weight: 700;
+  color: #333;
   text-transform: capitalize;
+  margin-top: 6px;
 }
 
 .card-id {
   font-size: 14px;
-  opacity: 0.7;
+  color: #888;
+  margin-top: 4px;
+}
+
+#cards-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 22px;
+  padding: 10px;
 }
 
 .types {
