@@ -1,20 +1,38 @@
-Este projeto é uma Pokédex interativa criada para praticar lógica de programação, JavaScript, manipulação de APIs e DOM. </br>
-Ele usa a PokéAPI para buscar dados de qualquer Pokémon, exibindo informações como imagem, stats, habilidades, descrição traduzida e linha evolutiva.</br>
+# Pokémon Project — Projeto de Portfólio
 
-O site conta com:</br>
+Este projeto é uma aplicação web desenvolvida para portfólio, com foco no consumo de APIs externas e na criação de interfaces dinâmicas utilizando JavaScript.
 
-Busca por nome ou ID</br>
+A aplicação permite buscar e visualizar informações de Pokémon de forma simples e interativa, simulando um cenário real de consumo de dados em aplicações front-end.
 
-Modal com detalhes completos</br>
+## Sobre o projeto
+O Pokémon Project foi desenvolvido com o objetivo de praticar integração com APIs, manipulação de dados, organização de código e construção de uma interface clara para o usuário.
 
-Modo Claro/Escuro com salvamento no localStorage</br>
+Durante o desenvolvimento, o foco esteve em transformar dados vindos de uma API em informações visuais compreensíveis, mantendo uma boa experiência de navegação e interação.
 
-Layout totalmente responsivo</br>
+## Funcionalidades
+- Busca de Pokémon por nome
+- Exibição de informações detalhadas
+- Consumo de API externa
+- Interface responsiva e interativa
 
-Tecnologias usadas: HTML5, CSS3, JavaScript e PokéAPI.</br>
+## Tecnologias utilizadas
+- HTML5
+- CSS3
+- JavaScript
+- Consumo de API REST
+- Git e GitHub
 
-Foi desenvolvido com foco em aprendizado, explorando requisições fetch(), funções assíncronas, criação de elementos dinâmicos, responsividade e boas práticas de código. </br>
+## Deploy
+O projeto está hospedado no Netlify.
 
-Deploy realizado via Netlify </br>
+Acesso ao projeto:  
+https://buscadordepokemon.netlify.app
 
-Para acessar esse projeo, basta acessar: https://buscadordepokemon.netlify.app
+## Objetivo do projeto
+- Praticar consumo de APIs REST
+- Trabalhar manipulação de dados em JavaScript
+- Desenvolver interfaces dinâmicas
+- Criar um projeto funcional para portfólio
+
+## Observações
+Este projeto utiliza dados públicos disponibilizados pela PokéAPI e não possui fins comerciais.
